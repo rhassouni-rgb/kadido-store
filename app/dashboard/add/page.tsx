@@ -42,7 +42,7 @@ export default function AddProductPage() {
           { 
             name, 
             price, 
-            shop_id: shop.id 
+           shop_id: shop!.id
           }
         ])
 
