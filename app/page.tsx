@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+لاىةلاىةimport React, { useState, useEffect, useRef } from "react";
 import { ShoppingCart, Search, ArrowRight, Phone, MessageCircle, Instagram, Facebook, Music, Grid } from "lucide-react"; 
 import { client } from "@/sanity/lib/client"; 
 import imageUrlBuilder from "@sanity/image-url";
