@@ -349,7 +349,7 @@ export default function SmartStore() {
                     boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
                     border: '1px solid #ccc'
                 }}>
-                    {selectedCategory === "all" ? "المعرض الفاخر" : "المنتجات"}
+                    {selectedCategory === "all" ? "المعرض الفاااخر" : "المنتجات"}
                 </h3>
               </div>
 
