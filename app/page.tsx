@@ -119,7 +119,7 @@ export default function SmartStore() {
       setShowInfoBar(true);
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => { setShowInfoBar(false); }, 3000);
-    };
+        };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -223,17 +223,14 @@ export default function SmartStore() {
 
             {/* 3. عنوان الترحيب وأيقونات (على اليسار) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  
-                  {/* --- تعديل 1: إخفاء ويلكوم في الهاتف (hidden md:block) --- */}
-                  <div className="hidden md:block" style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
-                    Welcome To Kadido
-                  </div>
+                 
+                 {/* تم حذف Welcome To Kadido من هنا  */}
 
-                  {/* سلة المشتريات */}
-                  <div style={{ position: 'relative', cursor: 'pointer' }}>
+                 {/* سلة المشتريات */}
+                 <div style={{ position: 'relative', cursor: 'pointer' }}>
                     <ShoppingCart style={{ width: '22px', height: '22px', color: '#fff' }} />
                     <span style={{ position: 'absolute', top: '-5px', right: '-5px', backgroundColor: 'red', color: '#fff', fontSize: '10px', width: '15px', height: '15px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>0</span>
-                  </div>
+                 </div>
             </div>
 
           </div>
@@ -335,24 +332,9 @@ export default function SmartStore() {
             </section>
 
             <section ref={productsSectionRef} style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-              
-              {/* --- تعديل 2: شريط فاصل رمادي وخط أسود خشن --- */}
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
-                <h3 style={{ 
-                    textAlign: 'center', 
-                    fontSize: '24px', 
-                    color: '#000', 
-                    fontWeight: '900', // أسود خشن
-                    backgroundColor: '#e5e7eb', // خلفية رمادية
-                    padding: '12px 60px', 
-                    borderRadius: '50px', 
-                    boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
-                    border: '1px solid #ccc'
-                }}>
-                    {selectedCategory === "all" ? "المعرض الفاااخر" : "المنتجات"}
-                </h3>
-              </div>
-
+              <h3 style={{ textAlign: 'center', fontSize: '30px', color: '#333', marginBottom: '40px', fontWeight: '900' }}>
+                  {selectedCategory === "all" ? "المعرض الفاخر" : "المنتجات"}
+              </h3>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
                 {displayedProducts.map((product: any) => (
                   <div key={product._id} onClick={() => handleProductClick(product)} 
