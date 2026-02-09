@@ -223,8 +223,12 @@ export default function SmartStore() {
 
             {/* 3. عنوان الترحيب وأيقونات (على اليسار) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                 {/* عنوان الترحيب - يظهر في الهاتف والكمبيوتر */}
-                 <div style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
+                 
+                 {/* 🔴 تعديل هام: 
+                    تمت إضافة className="hidden md:block" 
+                    لكي تختفي هذه العبارة في الهواتف وتظهر فقط في الشاشات الكبيرة
+                 */}
+                 <div className="hidden md:block" style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
                     Welcome To Kadido
                  </div>
 
@@ -334,9 +338,27 @@ export default function SmartStore() {
             </section>
 
             <section ref={productsSectionRef} style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-              <h3 style={{ textAlign: 'center', fontSize: '30px', color: '#333', marginBottom: '40px', fontWeight: '900' }}>
-                  {selectedCategory === "all" ? "المعرض الفاخر" : "المنتجات"}
-              </h3>
+              
+              {/* 🔴 تعديل هام:
+                 تحويل العنوان ليكون شريطاً عائماً (Floating Bar)
+                 خلفية رمادية - نص أسود خشن - ظل
+              */}
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
+                <h3 style={{ 
+                    textAlign: 'center', 
+                    fontSize: '28px', 
+                    color: '#000', // أسود داكن
+                    fontWeight: '900', // خط خشن جداً
+                    backgroundColor: '#dcdcdc', // رمادي فضي
+                    padding: '12px 50px', 
+                    borderRadius: '50px', // حواف دائرية
+                    boxShadow: '0 10px 20px rgba(0,0,0,0.15)', // ظل لرفع الشريط
+                    border: '1px solid #fff'
+                }}>
+                    {selectedCategory === "all" ? "المعرض الفاخر" : "المنتجات"}
+                </h3>
+              </div>
+
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
                 {displayedProducts.map((product: any) => (
                   <div key={product._id} onClick={() => handleProductClick(product)} 
