@@ -223,20 +223,17 @@ export default function SmartStore() {
 
             {/* 3. عنوان الترحيب وأيقونات (على اليسار) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                 
-                 {/* 🔴 تعديل هام: 
-                    تمت إضافة className="hidden md:block" 
-                    لكي تختفي هذه العبارة في الهواتف وتظهر فقط في الشاشات الكبيرة
-                 */}
-                 <div className="hidden md:block" style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
+                  
+                  {/* --- تعديل 1: إخفاء ويلكوم في الهاتف (hidden md:block) --- */}
+                  <div className="hidden md:block" style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
+                    Welcome To Kadido
+                  </div>
 
-                 </div>
-
-                 {/* سلة المشتريات */}
-                 <div style={{ position: 'relative', cursor: 'pointer' }}>
+                  {/* سلة المشتريات */}
+                  <div style={{ position: 'relative', cursor: 'pointer' }}>
                     <ShoppingCart style={{ width: '22px', height: '22px', color: '#fff' }} />
                     <span style={{ position: 'absolute', top: '-5px', right: '-5px', backgroundColor: 'red', color: '#fff', fontSize: '10px', width: '15px', height: '15px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>0</span>
-                 </div>
+                  </div>
             </div>
 
           </div>
@@ -339,21 +336,18 @@ export default function SmartStore() {
 
             <section ref={productsSectionRef} style={{ padding: '40px 20px', maxWidth: '1200px', margin: '0 auto' }}>
               
-              {/* 🔴 تعديل هام:
-                 تحويل العنوان ليكون شريطاً عائماً (Floating Bar)
-                 خلفية رمادية - نص أسود خشن - ظل
-              */}
+              {/* --- تعديل 2: شريط فاصل رمادي وخط أسود خشن --- */}
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
                 <h3 style={{ 
                     textAlign: 'center', 
-                    fontSize: '28px', 
-                    color: '#000', // أسود داكن
-                    fontWeight: '900', // خط خشن جداً
-                    backgroundColor: '#dcdcdc', // رمادي فضي
-                    padding: '12px 50px', 
-                    borderRadius: '50px', // حواف دائرية
-                    boxShadow: '0 10px 20px rgba(0,0,0,0.15)', // ظل لرفع الشريط
-                    border: '1px solid #fff'
+                    fontSize: '24px', 
+                    color: '#000', 
+                    fontWeight: '900', // أسود خشن
+                    backgroundColor: '#e5e7eb', // خلفية رمادية
+                    padding: '12px 60px', 
+                    borderRadius: '50px', 
+                    boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
+                    border: '1px solid #ccc'
                 }}>
                     {selectedCategory === "all" ? "المعرض الفاخر" : "المنتجات"}
                 </h3>
