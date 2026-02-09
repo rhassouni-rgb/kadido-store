@@ -229,7 +229,7 @@ export default function SmartStore() {
                     لكي تختفي هذه العبارة في الهواتف وتظهر فقط في الشاشات الكبيرة
                  */}
                  <div className="hidden md:block" style={{ color: '#FFD700', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px', border: '1px solid #FFD700', padding: '5px 10px', borderRadius: '5px' }}>
-                    Welcome To Kadido
+
                  </div>
 
                  {/* سلة المشتريات */}
